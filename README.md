@@ -15,4 +15,4 @@ The further you get, the higher your amount of points you can win!
 
 - - -
 
-Joost Bremmer [joost.bremmer@student.uva.nl](mailto:joost.bremmer@student.uva.nl)
+Joost Bremmer [toost.b@gmail.com](mailto:toost.b@gmail.com)
