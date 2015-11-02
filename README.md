@@ -10,7 +10,7 @@ Make your guess by clicking on the 'Yes' or 'No' buttons and watch your score so
 The further you get, the higher your amount of points you can win!
 
 
-<img src='preview.png' width='30%' height='30%' style='margin: auto; display: block;'/>
+<img src='preview.png' width='30%' height='30%' style='margin: 0 auto; display: block;'/>
 
 
 - - -
