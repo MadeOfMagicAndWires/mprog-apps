@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Prime Game</string>
+    <string name="action_settings">Settings</string>
+    <string name="number">0</string>
+    <string name="welcome">Prime or not a Prime</string>
+    <string name="score">0</string>
+    <string name="turn">0</string>
+</resources>
