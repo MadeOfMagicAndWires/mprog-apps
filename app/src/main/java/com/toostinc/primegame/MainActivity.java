@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                     answer = true;
                 }
 
-                Log.v("view", view.toString());
+                //Log.v("view", view.toString());
                 //Log.v("checkprime", String.valueOf(me.checkPrime(me.getCurrNum())));
                 Log.v("answer", String.valueOf(answer));
 

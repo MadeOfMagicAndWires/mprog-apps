@@ -32,9 +32,9 @@ public class PrimeGameAndroid extends PrimeGame {
 
       turns++;
       getNewNumber(getCurrRange());
-      primeView.setText(String.valueOf(getCurrNum()));
       Log.v("number", String.valueOf(getCurrNum()));
       Log.v("isprime", String.valueOf(checkPrime(getCurrNum())));
+      primeView.setText(String.valueOf(getCurrNum()));
       scoreView.setText(String.valueOf(score));
       turnView.setText(String.valueOf(turns));
 
