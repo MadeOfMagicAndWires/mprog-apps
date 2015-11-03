@@ -46,5 +46,9 @@ public class PrimeGameAndroid extends PrimeGame {
      */
     public void increaseScore(int n) {score += n;}
 
-
+    /**
+     * Decrease score by any amount
+     * @param n amount to detract from current score
+     */
+    public void decreaseScore(int n) {score -= n;}
 }

@@ -47,12 +47,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean answer = false;
+                boolean correct;
 
-                if( view == answerYes)
+
+                if(view.getId() == answerYes.getId()) {
                     answer = true;
+                }
 
+                Log.v("view", view.toString());
+                //Log.v("checkprime", String.valueOf(me.checkPrime(me.getCurrNum())));
                 Log.v("answer", String.valueOf(answer));
-                boolean correct = me.checkAnswer(answer);
+
+
+                correct = me.checkAnswer(answer);
+                Log.v("correct", String.valueOf(correct));
                 Snackbar.make(view, "Your answer was " + String.valueOf(correct), Snackbar.LENGTH_SHORT).show();
                 me.nextTurn(primeNumber, score, turn);
             }

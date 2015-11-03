@@ -152,8 +152,9 @@ public class PrimeGame {
   public boolean checkAnswer(boolean answer) {
     if (answer == checkPrime(getCurrNum())) {
       score += getCurrNum();
-      if (rangeMax <= 100000)
+      if (rangeMax <= 100000) {
         increaseMaxRange();
+      }
       increaseLevel();
       return true;
     }
