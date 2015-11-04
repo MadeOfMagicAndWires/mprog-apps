@@ -1,5 +1,6 @@
 package com.toostinc.primegame;
 import java.util.Random;
+import android.util.Log;
 
 /**
  * Class containing all the methods required to calculate and check
@@ -51,11 +52,12 @@ public class PrimeGame {
    *
    */
   public boolean checkPrime(int n) {
-    if ( n % 2 == 0) {
-      return false;
-    } else {
+      if (n <= 2) {return false; }
+      if ( n % 2 == 0) {return false;}
+
+      else {
         for (int i=3; i*i <= n; i++) {
-          if (n % 2 == 0)
+          if (n % i == 0)
             return false;
         }
       return true;
@@ -87,7 +89,8 @@ public class PrimeGame {
    * a random number
    */
   public void getNewNumber(int maxRange) {
-    current = rando.nextInt(maxRange+1);
+      current = rando.nextInt(maxRange+1);
+      isPrime = checkPrime(current);
   }
 
   /**
@@ -152,8 +155,9 @@ public class PrimeGame {
   public boolean checkAnswer(boolean answer) {
     if (answer == checkPrime(getCurrNum())) {
       score += getCurrNum();
-      if (rangeMax <= 100000)
+      if (rangeMax <= 100000) {
         increaseMaxRange();
+      }
       increaseLevel();
       return true;
     }
