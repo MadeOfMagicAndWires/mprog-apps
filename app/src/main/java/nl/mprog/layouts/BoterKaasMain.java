@@ -5,6 +5,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayout;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,14 +17,14 @@ import android.widget.ListAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import org.w3c.dom.Text;
 
-    RelativeLayout boterkaas;
+public class BoterKaasMain extends AppCompatActivity {
+
+    android.support.v7.widget.GridLayout boterkaas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        RelativeLayout boterkaas = (RelativeLayout) findViewById(R.id.boterkaas);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -31,10 +33,37 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                finish();
             }
         });
+
+        boterkaas = (android.support.v7.widget.GridLayout) findViewById(R.id.boterkaas);
+        Log.v("test", String.valueOf(boterkaas));
+
+        for (int i=0;i<3;i++) {
+
+            Log.v("row", String.valueOf(i));
+
+            for (int j=0;j<3;j++) {
+                View gridField = LayoutInflater.from(this).inflate(R.layout.grid_field, null);
+                gridField.setTag(i+"-"+j);
+                if (i==2) {
+                    int paddingRight  = gridField.getPaddingRight();
+                    gridField.setPadding(0,0,paddingRight,0);
+                }
+
+                if (j==2) {
+                    int paddingBottom = gridField.getPaddingBottom();
+                    gridField.setPadding(0, 0, 0, paddingBottom);
+                }
+
+                boterkaas.addView(gridField);
+            }
+
+
+
+
+        }
 
     }
 
