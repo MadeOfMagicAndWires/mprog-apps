@@ -1,10 +1,12 @@
 package nl.mprog.layouts;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayout;
+import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -43,6 +46,7 @@ public class BoterKaasMain extends AppCompatActivity {
         BoterKaasEierenAndroid game = new BoterKaasEierenAndroid();
         game.drawBoard(this, boterkaas, 3);
 
+
     }
 
     @Override
@@ -65,5 +69,16 @@ public class BoterKaasMain extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    View.OnClickListener playTurn = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Log.v("buttan", String.valueOf(v.getTag()));
+        }
+    };
+
+    public void playTurn(View view) {
+        Log.v("buttan", String.valueOf(view.getTag()));
     }
 }
