@@ -40,35 +40,10 @@ public class BoterKaasMain extends AppCompatActivity {
         boterkaas = (android.support.v7.widget.GridLayout) findViewById(R.id.boterkaas);
         Log.v("test", String.valueOf(boterkaas));
 
-        for (int i=0;i<3;i++) {
-
-            Log.v("row", String.valueOf(i));
-
-            for (int j=0;j<3;j++) {
-                View gridField = LayoutInflater.from(this).inflate(R.layout.grid_field, null);
-                gridField.setTag(i+"-"+j);
-                if (i==2) {
-                    int paddingRight  = gridField.getPaddingRight();
-                    gridField.setPadding(0,0,paddingRight,0);
-                }
-
-                if (j==2) {
-                    int paddingBottom = gridField.getPaddingBottom();
-                    gridField.setPadding(0, 0, 0, paddingBottom);
-                }
-
-                boterkaas.addView(gridField);
-            }
-
-
-
-
-        }
+        BoterKaasEierenAndroid game = new BoterKaasEierenAndroid();
+        game.drawBoard(this, boterkaas, 3);
 
     }
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
