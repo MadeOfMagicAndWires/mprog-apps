@@ -25,6 +25,7 @@ import org.w3c.dom.Text;
 public class BoterKaasMain extends AppCompatActivity {
 
     android.support.v7.widget.GridLayout boterkaas;
+    BoterKaasEierenAndroid game = new BoterKaasEierenAndroid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +44,8 @@ public class BoterKaasMain extends AppCompatActivity {
         boterkaas = (android.support.v7.widget.GridLayout) findViewById(R.id.boterkaas);
         Log.v("test", String.valueOf(boterkaas));
 
-        BoterKaasEierenAndroid game = new BoterKaasEierenAndroid();
-        game.drawBoard(this, boterkaas, 3);
+
+        game.drawBoard(this, boterkaas, BoterKaasEieren.DEFAULT_BOARDSIZE);
 
 
     }
@@ -71,14 +72,17 @@ public class BoterKaasMain extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    View.OnClickListener playTurn = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Log.v("buttan", String.valueOf(v.getTag()));
-        }
-    };
-
     public void playTurn(View view) {
         Log.v("buttan", String.valueOf(view.getTag()));
+
+        boterkaas = (android.support.v7.widget.GridLayout) findViewById(R.id.boterkaas);
+        Button tile = (Button) boterkaas.findViewWithTag(view.getTag());
+
+        char result = game.playTurn(tile);
+        tile.setText(String.valueOf(result));
+        Log.v("triple check:", String.valueOf(tile.getText()));
+
+        game.switchTurn();
+
     }
 }
