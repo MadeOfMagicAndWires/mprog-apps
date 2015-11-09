@@ -3,11 +3,8 @@
     <Button
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:text="@string/space"
         android:layout_height="200dp"
         android:layout_width="100dp"
-        app:layout_rowWeight="3"
-        app:layout_columnWeight="3"
         app:layout_gravity="fill_horizontal|fill_vertical"
         android:textAlignment="center"
         android:textSize="40pt"

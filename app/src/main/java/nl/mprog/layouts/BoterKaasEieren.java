@@ -82,13 +82,6 @@ public class BoterKaasEieren {
     }
 
     /**
-     * Returns the amount of rows and columns on the board.
-     * Actual Grid size is boardSize*boardSize
-     * @see #boardSize
-     */
-    public int getBoardSize(){return boardSize;}
-
-    /**
      * Sets the value of a certain tile
      * @param row    int the row number (x) of the desired tile, starting at 0
      * @param column int of the column number (y) of the disered tile, starting at 0

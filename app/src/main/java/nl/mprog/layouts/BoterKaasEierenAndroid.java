@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
-import android.support.design.widget.Snackbar;
+
 
 
 /**
@@ -116,7 +116,7 @@ public class BoterKaasEierenAndroid extends BoterKaasEieren {
      */
     public void printScore(View view) {
         Snackbar.make(view, String.valueOf(getPlayer()) + " Wins!\n" +
-                "X has " + wins[0] + "wins" + "\t|\t" + "O has " + wins[1] + " wins",
+                "X has " + wins[0] + " wins" + "\t|\t" + "O has " + wins[1] + " wins",
                 Snackbar.LENGTH_SHORT).show();
     }
 }
